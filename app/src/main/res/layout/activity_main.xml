@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/honeydew"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.04" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.96" />
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/layout_app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/mint"
+            android:elevation="8dp"
+            app:title="@string/app_name"
+            app:titleTextAppearance="@style/TextAppearance.Material3.ActionBar.Title" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <FrameLayout
+        android:id="@+id/layout_battery_progress"
+        android:layout_width="190dp"
+        android:layout_height="190dp"
+        app:layout_constraintBottom_toTopOf="@+id/layout_scroll_view"
+        app:layout_constraintEnd_toStartOf="@+id/vertical_end"
+        app:layout_constraintStart_toEndOf="@+id/vertical_start"
+        app:layout_constraintTop_toBottomOf="@+id/layout_app_bar">
+
+        <com.faisalyousaf777.battstat.CustomCircularProgress
+            android:id="@+id/circular_progress_battery_percentage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/tv_battery_level"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            tools:text="50%" />
+
+        <ImageView
+            android:id="@+id/iv_charging_indicator_icon"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center|bottom"
+            android:contentDescription="@string/str_desc_charging_indicator_icon"
+            android:src="@drawable/bolt_48dp"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+    </FrameLayout>
+
+    <ScrollView
+        android:id="@+id/layout_scroll_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/vertical_end"
+        app:layout_constraintStart_toEndOf="@+id/vertical_start"
+        app:layout_constraintTop_toBottomOf="@+id/layout_battery_progress">
+
+        <GridLayout
+            android:id="@+id/layout_grid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:orientation="horizontal">
+
+            <!-- Temperature -->
+            <LinearLayout
+                android:id="@+id/layout_temperature_info"
+                style="@style/CustomInfoLayoutStyle">
+
+                <TextView
+                    android:id="@+id/tv_battery_temperature_label"
+                    style="@style/CustomLabelTextViewStyle"
+                    android:text="@string/str_label_temperature" />
+
+                <TextView
+                    android:id="@+id/tv_battery_temperature"
+                    style="@style/CustomValueTextViewStyle"
+                    tools:text="36.7°C" />
+
+                <ImageView
+                    android:id="@+id/iv_temperature_icon"
+                    style="@style/CustomIconsViewStyle"
+                    android:contentDescription="@string/str_desc_temperature_icon"
+                    android:src="@drawable/device_thermostat_48dp_400" />
+
+            </LinearLayout>
+
+            <!-- Health -->
+            <LinearLayout
+                android:id="@+id/layout_health_info"
+                style="@style/CustomInfoLayoutStyle">
+
+                <TextView
+                    android:id="@+id/tv_battery_health_label"
+                    style="@style/CustomLabelTextViewStyle"
+                    android:text="@string/str_label_health" />
+
+                <TextView
+                    android:id="@+id/tv_battery_health"
+                    style="@style/CustomValueTextViewStyle"
+                    tools:text="Good" />
+
+                <ImageView
+                    android:id="@+id/iv_health_icon"
+                    style="@style/CustomIconsViewStyle"
+                    android:contentDescription="@string/str_desc_temperature_icon"
+                    android:src="@drawable/favorite_48dp" />
+
+            </LinearLayout>
+
+            <!-- Technology -->
+            <LinearLayout
+                android:id="@+id/layout_technology_info"
+                style="@style/CustomInfoLayoutStyle">
+
+                <TextView
+                    android:id="@+id/tv_battery_technology_label"
+                    style="@style/CustomLabelTextViewStyle"
+                    android:text="@string/str_label_technology" />
+
+                <TextView
+                    android:id="@+id/tv_battery_technology"
+                    style="@style/CustomValueTextViewStyle"
+                    tools:text="Li-poly" />
+
+                <ImageView
+                    android:id="@+id/iv_technology_icon"
+                    style="@style/CustomIconsViewStyle"
+                    android:contentDescription="@string/str_desc_charging_source_icon"
+                    android:src="@drawable/memory_48dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_voltage_info"
+                style="@style/CustomInfoLayoutStyle">
+
+                <TextView
+                    android:id="@+id/tv_battery_voltage_label"
+                    style="@style/CustomLabelTextViewStyle"
+                    android:text="@string/str_label_voltage" />
+
+                <TextView
+                    android:id="@+id/tv_battery_voltage"
+                    style="@style/CustomValueTextViewStyle"
+                    tools:text="4.203V" />
+
+                <ImageView
+                    android:id="@+id/iv_voltage_icon"
+                    style="@style/CustomIconsViewStyle"
+                    android:contentDescription="@string/str_desc_charging_status_icon"
+                    android:src="@drawable/electric_bolt_48dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_plug_info"
+                style="@style/CustomInfoLayoutStyle">
+
+                <TextView
+                    android:id="@+id/tv_battery_plug_type_label"
+                    style="@style/CustomLabelTextViewStyle"
+                    android:text="@string/str_label_charging_source" />
+
+                <TextView
+                    android:id="@+id/tv_battery_plug_type"
+                    style="@style/CustomValueTextViewStyle"
+                    tools:text="AC Charger" />
+
+                <ImageView
+                    android:id="@+id/iv_plug_type_icon"
+                    style="@style/CustomIconsViewStyle"
+                    android:contentDescription="@string/str_desc_charging_source_icon"
+                    android:src="@drawable/electrical_services_48dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_status_info"
+                style="@style/CustomInfoLayoutStyle">
+
+                <TextView
+                    android:id="@+id/tv_battery_status_label"
+                    style="@style/CustomLabelTextViewStyle"
+                    android:text="@string/str_label_status" />
+
+                <TextView
+                    android:id="@+id/tv_battery_status"
+                    style="@style/CustomValueTextViewStyle"
+                    tools:text="DisCharging" />
+
+                <ImageView
+                    android:id="@+id/iv_status_icon"
+                    style="@style/CustomIconsViewStyle"
+                    android:contentDescription="@string/str_desc_charging_status_icon"
+                    android:src="@drawable/battery_not_charging_48dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_cycle_count_info"
+                style="@style/CustomInfoLayoutStyle">
+
+                <TextView
+                    android:id="@+id/tv_battery_cycle_count_label"
+                    style="@style/CustomLabelTextViewStyle"
+                    android:text="@string/str_label_cycle_count" />
+
+                <TextView
+                    android:id="@+id/tv_battery_cycle_count"
+                    style="@style/CustomValueTextViewStyle"
+                    tools:text="4400" />
+
+                <ImageView
+                    android:id="@+id/iv_cycle_count_icon"
+                    style="@style/CustomIconsViewStyle"
+                    android:contentDescription="@string/str_desc_cycle_count_icon"
+                    android:src="@drawable/battery_not_charging_48dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_capacity_level_info"
+                style="@style/CustomInfoLayoutStyle">
+
+                <TextView
+                    android:id="@+id/tv_battery_capacity_level_label"
+                    style="@style/CustomLabelTextViewStyle"
+                    android:text="@string/str_label_capacity_level" />
+
+                <TextView
+                    android:id="@+id/tv_battery_capacity_level"
+                    style="@style/CustomValueTextViewStyle"
+                    tools:text="4500 mAH" />
+
+                <ImageView
+                    android:id="@+id/iv_capacity_level_icon"
+                    style="@style/CustomIconsViewStyle"
+                    android:contentDescription="@string/str_desc_capacity_level_icon"
+                    android:src="@drawable/memory_48dp" />
+
+            </LinearLayout>
+        </GridLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
