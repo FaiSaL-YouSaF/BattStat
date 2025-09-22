@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="circular_progress_size">200dp</dimen>
+    <dimen name="txt_size_battery_level">32sp</dimen>
+    <dimen name="charging_indicator_icon_size">60dp</dimen>
+
+    <dimen name="info_layout_height">130dp</dimen>
+    <dimen name="info_layout_padding">10dp</dimen>
+    <dimen name="info_layout_margin">5dp</dimen>
+
+    <dimen name="txt_size_label_text_view">14sp</dimen>
+    <dimen name="txt_size_value_text_view">16sp</dimen>
+    <dimen name="text_view_margin_bottom">4dp</dimen>
+
+    <dimen name="icon_width">50dp</dimen>
+    <dimen name="icon_height">0dp</dimen>
+    <dimen name="icon_weight">1</dimen>
+</resources>

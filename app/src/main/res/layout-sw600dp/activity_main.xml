@@ -91,7 +91,7 @@
             android:id="@+id/layout_grid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:columnCount="2"
+            android:columnCount="5"
             android:orientation="horizontal">
 
             <!-- Temperature -->
@@ -197,13 +197,13 @@
                 <TextView
                     android:id="@+id/tv_battery_plug_type"
                     style="@style/CustomValueTextViewStyle"
-                    tools:text="AC Charger" />
+                    tools:text="Not Plugged" />
 
                 <ImageView
                     android:id="@+id/iv_plug_type_icon"
                     style="@style/CustomIconsViewStyle"
                     android:contentDescription="@string/str_desc_charging_source_icon"
-                    android:src="@drawable/electrical_services_48dp" />
+                    android:src="@drawable/power_off_48dp" />
 
             </LinearLayout>
 

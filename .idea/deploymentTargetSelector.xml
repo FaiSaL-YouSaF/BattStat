@@ -8,12 +8,12 @@
           <targets>
             <Target type="DEFAULT_BOOT">
               <handle>
-                <DeviceId pluginId="PhysicalDevice" identifier="serial=c4126bab" />
+                <DeviceId pluginId="LocalEmulator" identifier="path=/home/lenovoi53570/.android/avd/Pixel_Tablet_API_34.0.avd" />
               </handle>
             </Target>
             <Target type="DEFAULT_BOOT">
               <handle>
-                <DeviceId pluginId="LocalEmulator" identifier="path=/home/lenovoi53570/.android/avd/Pixel_9_Pro.avd" />
+                <DeviceId pluginId="PhysicalDevice" identifier="serial=c4126bab" />
               </handle>
             </Target>
           </targets>

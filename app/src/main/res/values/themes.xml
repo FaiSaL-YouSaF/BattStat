@@ -10,36 +10,37 @@
 
     <style name="CustomInfoLayoutStyle">
         <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">130dp</item>
+        <item name="android:layout_height">@dimen/info_layout_height</item>
         <item name="android:layout_columnWeight">1</item>
-        <item name="android:layout_margin">5dp</item>
+        <item name="android:layout_margin">@dimen/info_layout_margin</item>
         <item name="android:background">@drawable/info_layout_background</item>
         <item name="android:orientation">vertical</item>
         <!--        <item name="android:paddingHorizontal">10dp</item>      Requires Api level 26, current min is 21-->
-        <item name="android:paddingStart">10dp</item>
-        <item name="android:paddingEnd">10dp</item>
-        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingStart">@dimen/info_layout_padding</item>
+        <item name="android:paddingEnd">@dimen/info_layout_padding</item>
+        <item name="android:paddingTop">@dimen/info_layout_padding</item>
     </style>
 
     <style name="CustomLabelTextViewStyle">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginBottom">4dp</item>
-        <item name="android:textSize">14sp</item>
+        <item name="android:layout_marginBottom">@dimen/text_view_margin_bottom</item>
+        <item name="android:textSize">@dimen/txt_size_label_text_view</item>
     </style>
 
     <style name="CustomValueTextViewStyle">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginBottom">4dp</item>
-        <item name="android:textSize">16sp</item>
+        <item name="android:layout_marginBottom">@dimen/text_view_margin_bottom</item>
+        <item name="android:textSize">@dimen/txt_size_value_text_view</item>
         <item name="android:textStyle">bold</item>
     </style>
 
     <style name="CustomIconsViewStyle">
-        <item name="android:layout_width">50dp</item>
-        <item name="android:layout_height">50dp</item>
-        <item name="android:layout_gravity">bottom</item>
+        <item name="android:layout_width">@dimen/icon_width</item>
+        <item name="android:layout_height">@dimen/icon_height</item>
+        <item name="android:layout_weight">@dimen/icon_weight</item>
+        <item name="android:layout_gravity">bottom|center_horizontal</item>
     </style>
 
 </resources>
