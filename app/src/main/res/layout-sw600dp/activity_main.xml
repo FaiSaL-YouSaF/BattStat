@@ -91,7 +91,7 @@
             android:id="@+id/layout_grid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:columnCount="5"
+            android:columnCount="4"
             android:orientation="horizontal">
 
             <!-- Temperature -->
@@ -225,7 +225,7 @@
                     android:id="@+id/iv_status_icon"
                     style="@style/CustomIconsViewStyle"
                     android:contentDescription="@string/str_desc_charging_status_icon"
-                    android:src="@drawable/battery_not_charging_48dp" />
+                    android:src="@drawable/battery_discharging_48dp" />
 
             </LinearLayout>
 

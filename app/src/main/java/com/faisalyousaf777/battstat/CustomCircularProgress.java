@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 
 import androidx.annotation.NonNull;
@@ -23,6 +24,7 @@ public class CustomCircularProgress extends View {
     }
 
     private void init() {
+        Log.d("Width", "init: Width: " + getWidth() + " Height: " + getHeight());
         backgroundPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         backgroundPaint.setColor(Color.LTGRAY);
         backgroundPaint.setStyle(Paint.Style.STROKE);
@@ -30,7 +32,7 @@ public class CustomCircularProgress extends View {
         backgroundPaint.setStrokeCap(Paint.Cap.ROUND);
 
         progressPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        progressPaint.setColor(getResources().getColor(R.color.amber));
+        progressPaint.setColor(getResources().getColor(R.color.amber, null));
         progressPaint.setStyle(Paint.Style.STROKE);
         progressPaint.setStrokeWidth(40f);
         progressPaint.setStrokeCap(Paint.Cap.ROUND);
