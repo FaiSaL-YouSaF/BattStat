@@ -177,6 +177,7 @@ public class MainActivity extends AppCompatActivity implements OnBatteryChangeLi
                 break;
             default:
                 tvPlugType.setText(String.format(getString(R.string.battery_plugged_format), getString(R.string.default_plugged_status)));
+                ivPluggedIcon.setImageResource(R.drawable.power_off_48dp);
                 ivChargingIndicator.setVisibility(ImageView.INVISIBLE);
                 break;
         }
